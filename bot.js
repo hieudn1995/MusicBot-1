@@ -102,7 +102,7 @@ client.on('message', async msg => { // eslint-disable-line
                     var videos = await youtube.searchVideos(searchString, 10);
                     let index = 0;
                     var embedqueue5 = new Discord.RichEmbed()
-                        .setTitle(`__**Song Play By Blackfox**__`)
+                        .setTitle(`__**CPH MUSIC || BY TRẦN HIẾU**__`)
                         .setDescription(`
 ${videos.map(video2 => `**${++index}-** ${video2.title}`).join('\n')}
 
