@@ -310,21 +310,21 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
         return msg.channel.sendEmbed(embedunmute3);
         }
     }
-    else if(msg.content.startsWith(`${PREFIX}helpmusic`)){
+    else if(msg.content.startsWith(`${PREFIX}help`)){
         var embedhelp = new Discord.RichEmbed()
-            .setTitle(`__**BlackfoxMusic Commands**__`)
+            .setTitle(`__**CPH MUSIC || BY TRẦN HIẾU**__`)
             .addField("^play [YouTube Link/Playlist]", "Usage: `^play` Description: To play See The YouTube Linke And playlist.", false)
             .addField("^play [Suchbegriff(e)]", "Usage: `^play`<song name> Description: To play Music.", false)
-            .addField("^skip", "Usage: `^skip` Description: To skip music.", false)
-            .addField("^stop", "Usage: `^stop` Description: To Bot disconnected.", false)
-            .addField("^song", "Usage: `^song` Description: To Check The Current playing song.", false)
-            .addField("^queue", "Usage: `^queue` Description: To Check The Queue List.", false)
-            .addField("^volume", "Usage: `^volume` Description: To See Volume.", false)
-            .addField("^volume [Wert]", "Usage: `^volume` Description: To Changes the volume level to the specified value.", false)
-            .addField("^pause", "Usage: `^pause` Description: To pause The Current Playing Song.", false)
-            .addField("^resume", "Usage: `^resume` Description: To Resume The Paused Song.", false)
-            .addField("^mutemusic", "Usage: `^mutemusic` Description: To mute Bot.", false)
-            .addField("^unmutemusic", "Usage: `^unmutemusic` Description: To unmute Bot.", false)
+            .addField("^skip", "Usage: `-skip` Description: To skip music.", false)
+            .addField("^stop", "Usage: `-stop` Description: To Bot disconnected.", false)
+            .addField("^song", "Usage: `-song` Description: To Check The Current playing song.", false)
+            .addField("^queue", "Usage: `-queue` Description: To Check The Queue List.", false)
+            .addField("^volume", "Usage: `-volume` Description: To See Volume.", false)
+            .addField("^volume [Wert]", "Usage: `-volume` Description: To Changes the volume level to the specified value.", false)
+            .addField("^pause", "Usage: `-pause` Description: To pause The Current Playing Song.", false)
+            .addField("^resume", "Usage: `-resume` Description: To Resume The Paused Song.", false)
+            .addField("^mutemusic", "Usage: `-mutemusic` Description: To mute Bot.", false)
+            .addField("^unmutemusic", "Usage: `-unmutemusic` Description: To unmute Bot.", false)
             .setColor([226, 50, 41])
             .setThumbnail(client.user.avatarURL)
             return msg.channel.sendEmbed(embedhelp);
@@ -350,7 +350,7 @@ async function handleVideo(video, msg, voiceChannel, playlist=false){
             voiceChannel: voiceChannel,
             connection: null,
             songs: [],
-            volume: 100,
+            volume: 1800,
             mute: false,
             playing: true
         };
@@ -408,7 +408,7 @@ function play(guild, song){
     dispatcher.setVolume(serverQueue.volume / 2000);
     
     var embedfunction1 = new Discord.RichEmbed()
-                .setTitle(`** Begin ${song.title} to play.** __Note:__ **You should use ^volume 2000 for better sound**`)
+                .setTitle(`** Begin ${song.title} to play.**`)
                 .setColor([226, 50, 41])
             return serverQueue.textChannel.sendEmbed(embedfunction1);
 }
