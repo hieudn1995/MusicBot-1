@@ -209,7 +209,7 @@ Link: ${serverQueue.songs[0].url}
         
         if(args[1]>0){
         serverQueue.volume = args[1];
-        serverQueue.connection.dispatcher.setVolume(args[1] / 2000);
+        serverQueue.connection.dispatcher.setVolume(args[1] / 100);
         serverQueue.mute = false;
         var embedvolume3 = new Discord.RichEmbed()
                 .setTitle(`**The volume is on ${args[1]} set**`)
@@ -350,7 +350,7 @@ async function handleVideo(video, msg, voiceChannel, playlist=false){
             voiceChannel: voiceChannel,
             connection: null,
             songs: [],
-            volume: 1800,
+            volume: 80,
             mute: false,
             playing: true
         };
@@ -405,7 +405,7 @@ function play(guild, song){
             })
             .on('error', error => console.log(error)); 
             
-    dispatcher.setVolume(serverQueue.volume / 2000);
+    dispatcher.setVolume(serverQueue.volume / 100);
     
     var embedfunction1 = new Discord.RichEmbed()
                 .setTitle(`** Begin ${song.title} to play.**`)
